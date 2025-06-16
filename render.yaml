@@ -1,20 +1,10 @@
-services:
+services:Add commentMore actions
   - type: web
     name: aniwatch-api
-    env: node
+    runtime: docker
+    repo: https://github.com/SAbotsup/api.git
     plan: free
-    buildCommand: npm install
-    startCommand: node index.js
+    branch: main
     envVars:
-      - key: ANIWATCH_API_PORT
-        value: $PORT
-      - key: ANIWATCH_API_WINDOW_MS
-        value: "1800000"
-      - key: ANIWATCH_API_MAX_REQS
-        value: "70"
-      - key: ANIWATCH_API_CORS_ALLOWED_ORIGINS
-        value: https://anipaca.demovercel.app,https://demo.anipaca.demovercel.app
-      - key: ANIWATCH_API_S_MAXAGE
-        value: "60"
-      - key: ANIWATCH_API_STALE_WHILE_REVALIDATE
-        value: "30"
+      - key: PORT
+        value: 4000
